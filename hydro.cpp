@@ -97,7 +97,8 @@ int main(){
 				pressEnter();
 				break;
 			case 2: // call addData function, call pressEnter;
-				int newyear, newflow;
+				int newyear;
+				double newflow;
 				cout<<"Please enter a year"<<endl;
 				cin>>newyear;
 				
