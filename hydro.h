@@ -1,37 +1,26 @@
+
 #ifndef HYDRO_H
 #define HYDRO_H
 
 #include "list.h"
 #include <iostream>
-#include <stdlib.h>
-#include <cstdlib>
 #include <fstream>
+
 using namespace std;
 
-void displayHeader(){
-	cout << "Program: Flow Studies, Fall 2020" << endl;
-	cout << "Version: 1.0" << endl;
-	cout << "Lab section: B01" << endl;
-	cout << "Produced by: Kohinoor Chauhan and Erin Kim" << endl;
-}
+// Function declarations 
+int readData(ifstream& file, FlowList& list);  // Function to read data from the file
+int menu();  // Displays a menu and returns the user’s choice
+void display(const FlowList& list);  // Displays years and flows, and average
 
-void pressEnter(){
-	cout << "\n<<< Press Enter to Continue>>>>\n";
-	cin.get();
-}
+int addData(FlowList& list, int year, double flow);  // Adds data to the list
+void removeData(FlowList& list, int year);  // Removes data from the list
 
-int readData(ifstream& file, FlowList& list){
-	int year;
-    double flow;
-    int count = 0;  // To count how many records were read and added
+double average(const FlowList& list);  // Returns the flow average in the list
 
-    // Read data from the file and add it to the list
-    while (file >> year >> flow) {
-        list.insert(year, flow);  // Call addData method of FlowList to insert the data
-        count++;  // Increment the counter
-    }
+void saveData(FlowList& list);  //opens file for writing
+void pressEnter();  // Prompts the user to press Enter
+void displayHeader();
+int menu();
 
-    return count;
-}
-
-#endif
+#endif 
