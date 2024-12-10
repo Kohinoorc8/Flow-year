@@ -1,5 +1,3 @@
-//Lab 9, part 2
-
 #ifndef LIST_H
 #define LIST_H
 
