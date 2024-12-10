@@ -1,5 +1,3 @@
-//Lab 9 Part 2
-
 #include "list.h"
 #include "hydro.h"
 #include <iostream>
